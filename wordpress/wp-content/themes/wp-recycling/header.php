@@ -23,25 +23,33 @@
 <body <?php body_class(); ?>>
 <!-- wrapper -->
 <div class="wrapper">
+
   <header role="banner">
-    <div class="inner">
+    <div class="container">
+      <div class="row">
 
-      <div class="logo">
-        <?php if ( !is_front_page() && !is_home() ){ ?>
-          <a href="<?php echo home_url(); ?>">
-        <?php } ?>
-            <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>" class="logo-img">
-        <?php if ( !is_front_page() && !is_home() ){ ?>
-          </a>
-        <?php } ?>
-      </div><!-- /logo -->
+        <div class="header--logo col-lg-9 col-md-9">
+          <?php if ( !is_front_page() && !is_home() ){ ?>
+            <a href="<?php echo home_url(); ?>">
+          <?php } ?>
+              <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>" class="logo-img">
+          <?php if ( !is_front_page() && !is_home() ){ ?>
+            </a>
+          <?php } ?>
+        </div><!-- /logo -->
 
-      <nav class="nav" role="navigation">
-        <?php wpeHeadNav(); ?>
-      </nav><!-- /nav -->
+        <div class="header-add col-lg-3 col-md-3">
+          <button class="btn btn-orange header-btn__add"><i class="ico ico-circle-plus">+</i>Добавить организацию</button>
+        </div><!-- /.header-add col-lg-3 col-md-3 -->
 
-    </div><!-- /.inner -->
+        <nav class="nav__header col-lg-12 col-md-12" role="navigation">
+          <?php wpeHeadNav(); ?>
+        </nav><!-- /nav -->
+
+      </div><!-- /.row -->
+    </div><!-- /.container -->
   </header><!-- /header -->
 
   <section role="main">
-    <div class="inner">
+    <div class="container">
+      <div class="row">
