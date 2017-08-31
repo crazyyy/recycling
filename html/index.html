@@ -25,21 +25,28 @@
 <body>
 <!-- wrapper -->
 <div class="wrapper">
+
   <header role="banner">
     <div class="container">
       <div class="row">
 
-        <div class="logo col-md-2">
+        <div class="header--logo col-lg-9 col-md-9">
           <img src="img/logo.png" alt="" title="">
         </div><!-- /logo -->
 
-        <nav class="nav__header col-md-12" role="navigation">
+        <div class="header-add col-lg-3 col-md-3">
+          <button class="btn btn-orange header-btn__add"><i class="ico ico-circle-plus">+</i>Добавить организацию</button>
+        </div><!-- /.header-add col-lg-3 col-md-3 -->
+
+        <nav class="nav__header col-lg-12 col-md-12" role="navigation">
           <ul class="headnav">
-            <li><a href="#">menu</a></li>
-            <li><a href="#">menu</a></li>
-            <li><a href="#">menu</a></li>
-            <li><a href="#">menu</a></li>
-            <li><a href="#">menu</a></li>
+            <li><a href="#"><i class="ico ico-paper"></i>Макулатура</a></li>
+            <li class="current-item"><a href="#"><i class="ico ico-metal"></i>Металлолом</a></li>
+            <li><a href="#"><i class="ico ico-plast"></i>Пластик</a></li>
+            <li><a href="#"><i class="ico ico-glass"></i>Стекло</a></li>
+            <li><a href="#"><i class="ico ico-other"></i>Другое вторсырье</a></li>
+            <li><a href="#"><i class="ico ico-util"></i>Вывоз мусора</a></li>
+            <li><a href="#"><i class="ico ico-articles"></i>Статьи</a></li>
           </ul>
         </nav><!-- /nav -->
 
@@ -206,11 +213,23 @@
 </div><!-- /wrapper -->
 
 <footer role="contentinfo">
-  <div class="container">
-    <div class="row">
+  <div class="container container-footer">
+    <div class="row row-footer">
 
-      <p class="copyright col-md-12">
-        © 2016 Собственность. Работает на html2wp easy.
+      <nav class="nav__footer col-lg-12 col-md-12" role="navigation">
+        <ul class="headnav">
+          <li><a href="#"><i class="ico ico-paper"></i>Макулатура</a></li>
+          <li class="current-item"><a href="#"><i class="ico ico-metal"></i>Металлолом</a></li>
+          <li><a href="#"><i class="ico ico-plast"></i>Пластик</a></li>
+          <li><a href="#"><i class="ico ico-glass"></i>Стекло</a></li>
+          <li><a href="#"><i class="ico ico-other"></i>Другое вторсырье</a></li>
+          <li><a href="#"><i class="ico ico-util"></i>Вывоз мусора</a></li>
+          <li><a href="#"><i class="ico ico-articles"></i>Статьи</a></li>
+        </ul>
+      </nav><!-- /nav -->
+
+      <p class="copyright col-lg-3 col-lg-push-9 col-md-3 col-md-push-9">
+        © 2016 Все права защищены wwws.site.ru
       </p><!-- /copyright -->
 
     </div><!-- /.row -->

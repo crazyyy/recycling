@@ -1,7 +1,7 @@
 <?php
-define('DB_NAME', 'DBNAME');
-define('DB_USER', 'DBUSER');
-define('DB_PASSWORD', 'DBPASS');
+define('DB_NAME', 'recycling');
+define('DB_USER', 'recycling');
+define('DB_PASSWORD', 'recycling');
 
 define('DB_HOST', 'localhost');
 
