@@ -680,4 +680,151 @@ function disable_emojicons_tinymce( $plugins ) {
   }
 }
 
+/**
+ * To count number of views and store in database.
+ *
+ * @param $postID currently viewed post/page
+ */
+function subh_set_post_view( $postID ) {
+ $count_key = 'post_views_count';
+ $count     = (int) get_post_meta( $postID, $count_key, true );
+ if ( $count < 1 ) {
+ delete_post_meta( $postID, $count_key );
+ add_post_meta( $postID, $count_key, '0' );
+ } else {
+ $count++;
+ update_post_meta( $postID, $count_key, (string) $count );
+ }
+}
+
+/**
+ * Add a new column in the wp-admin posts list
+ *
+ * @param $defaults
+ *
+ * @return mixed
+ */
+function subh_posts_column_views( $defaults ) {
+ $defaults['post_views'] = __( 'Views' );
+
+ return $defaults;
+}
+
+/**
+ * Display the number of views for each posts
+ *
+ * @param $column_name
+ * @param $id
+ *
+ * @return void simply echo out the number of views
+ */
+function subh_posts_custom_column_views( $column_name, $id ) {
+ if ( $column_name === 'post_views' ) {
+ echo subh_get_post_view( get_the_ID() );
+ }
+}
+
+// Add news Post Type
+add_action( 'init', 'post_type_point' );
+function post_type_point() {
+
+  $labels = array(
+    'name'=> 'Пункты приема',
+    'singular_name' => 'Пункты',
+    'add_new' => 'Добавить',
+    'add_new_item' => 'Добавить',
+    'edit' => 'Edit',
+    'edit_item' => 'Edit',
+    'new-item' => 'Добавить',
+    'view' => 'View',
+    'view_item' => 'View',
+    'search_items' => 'Search',
+    'not_found' => 'Not Found',
+    'not_found_in_trash' => 'Not Found',
+    'parent' => 'Parent',
+  );
+
+  $args = array(
+    'labels' => $labels,
+    'description' => 'Пункты приема',
+    'public' => true,
+    'exclude_from_search' => true,
+    'show_ui' => true,
+    'menu_position' => 3,
+    // https://developer.wordpress.org/resource/dashicons/
+    'menu_icon' => 'dashicons-location-alt',
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'supports' => array('title','editor','thumbnail'),
+    'rewrite' => array( 'slug' => 'point' ),
+    'show_in_rest' => true
+  );
+
+  register_post_type( 'point' , $args );
+}
+
+
+// hook into the init action and call create_book_taxonomies when it fires
+add_action( 'init', 'taxonomies_city', 0 );
+function taxonomies_city() {
+  // Add new taxonomy, make it hierarchical (like categories)
+  $labels = array(
+    'name'              => 'Города',
+    'singular_name'     => 'Город',
+    'search_items'      => 'Search',
+    'all_items'         => 'All',
+    'parent_item'       => 'Parent',
+    'parent_item_colon' => 'Parent',
+    'edit_item'         => 'Edit',
+    'update_item'       => 'Update',
+    'add_new_item'      => 'Добавить',
+    'new_item_name'     => 'Добавить',
+    'menu_name'         => 'Города',
+  );
+
+  $args = array(
+    'hierarchical'      => true,
+    'labels'            => $labels,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'query_var'         => true,
+    'rewrite'           => array( 'slug' => 'city' ),
+  );
+  register_taxonomy( 'city', array( 'point' ), $args );
+}
+
+add_action( 'init', 'taxonomies_type', 0 );
+function taxonomies_type() {
+  // Add new taxonomy, NOT hierarchical (like tags)
+  $labels = array(
+    'name'                       => 'Типы',
+    'singular_name'              => 'Тип',
+    'search_items'               => 'Search',
+    'popular_items'              => 'Popular',
+    'all_items'                  => 'All',
+    'parent_item'                => null,
+    'parent_item_colon'          => null,
+    'edit_item'                  => 'Edit',
+    'update_item'                => 'Update',
+    'add_new_item'               => 'Add',
+    'new_item_name'              => 'New',
+    'separate_items_with_commas' => 'Separate items with comas',
+    'add_or_remove_items'        => 'Add or remove',
+    'choose_from_most_used'      => 'Choose from the most used',
+    'not_found'                  => 'No found.',
+    'menu_name'                  => 'Типы',
+  );
+
+  $args = array(
+    'hierarchical'          => false,
+    'labels'                => $labels,
+    'show_ui'               => true,
+    'show_admin_column'     => true,
+    'update_count_callback' => '_update_post_term_count',
+    'query_var'             => true,
+    'rewrite'               => array( 'slug' => 'type' ),
+  );
+
+  register_taxonomy( 'type', 'point', $args );
+}
 ?>

@@ -8,4 +8,29 @@
 		RU: Здесь код вывода того, что необходимо для статического контента виджетов -->
 
   <?php endif; ?>
+
+  <div class="widget widget--usefull">
+    <h6><span>Полезные</span> статьи</h6>
+    <ul>
+      <?php
+        $args = array(
+          'orderby'      => 'meta_value',
+          'meta_key'     => 'post_views_count',
+          'order'        => 'DESC',
+          'post_status'  => 'publish'
+        );
+        $ranking = 0;
+      ?>
+      <?php query_posts($args); ?>
+        <?php if ( have_posts() ) : ?>
+          <?php while ( have_posts()) : the_post();  $ranking++; ?>
+            <li>
+              <h5><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+              <?php wpeExcerpt('wpeExcerpt20'); ?>
+            </li>
+      <?php endwhile; endif;  wp_reset_query(); ?>
+    </ul>
+
+  </div><!-- /.widget widget--usefull -->
+
 </aside><!-- /sidebar -->

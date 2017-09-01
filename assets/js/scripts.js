@@ -22,6 +22,30 @@ if (typeof jQuery === 'undefined') {
 }
 // Place any jQuery/helper plugins in here.
 $(document).ready(function() {
+  $('.modal-close').on('click', function(e) {
+    CloseModal()
+  })
+  $('.modal-bg').on('click', function(e) {
+    CloseModal()
+  })
 
+  $('.modal-container').on('click', function(e) {
+    e.stopPropagation();
+  })
+
+  $('.header-btn__add').on('click', function(e) {
+    e.stopPropagation();
+    OpenModal();
+    $('.modal-bg').addClass('modal-bg--opened').addClass('modal-recall');
+  })
 
 });
+
+function CloseModal() {
+  $('.modal-bg').attr('class', '').addClass('modal-bg');
+  $('body').removeClass('modal-opened');
+}
+
+function OpenModal(html) {
+  $('body').addClass('modal-opened');
+}

@@ -21,7 +21,7 @@ bower_components/
 npm-debug.log
 sftp-config.json
 .phpintel
-
+wordpress/wp-content/db.php
 wp-content/advanced-cache.php
 wp-content/backup-db/
 wp-content/backups/

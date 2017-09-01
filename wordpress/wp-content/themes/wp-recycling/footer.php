@@ -20,6 +20,13 @@
   </div><!-- /.container -->
 </footer><!-- /footer -->
 
+  <div class="modal-bg">
+    <div class="modal-container">
+      <?php echo do_shortcode('[contact-form-7 id="134" title="Добавить организацию"]'); ?>
+    </div><!-- /.modal-container -->
+    <span class="modal-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+  </div><!-- /.modal-bg -->
+
   <?php wp_footer(); ?>
 
 </body>

@@ -306,6 +306,7 @@ article {
     padding-left: 5px;
   }
   .page-title,
+  .single-title,
   .search-title {
     font-size: 30px;
 
@@ -313,6 +314,9 @@ article {
 
     margin-bottom: 25px;
     padding: 0 5px 20px;
+    span {
+      color: $green;
+    }
     &:after {
       position: absolute;
       bottom: 0;
@@ -368,10 +372,14 @@ article {
       font-size: 110%;
     }
     .page-title,
+    .single-title,
     .search-title {
       font-size: 30px;
 
       padding-left: 0;
+      span {
+        color: $green;
+      }
       &:after {
         left: 0;
       }
@@ -432,6 +440,87 @@ article {
   }
   img {
     border-radius: 3px;
+    &.alignleft {
+      margin-right: 30px;
+      margin-bottom: 20px;
+    }
+    &.alignright {
+      margin-bottom: 20px;
+      margin-left: 30px;
+    }
+  }
+}
+div#toc_container {
+  margin: 0 0 22px;
+  padding: 30px;
+
+  border: 0 !important;
+  border-radius: 3px;
+  background-color: #ebf2f0 !important;
+  .toc_list {
+    margin-bottom: 18px;
+    margin-left: 30px;
+    > li {
+      > a {
+        font-weight: bold;
+        .toc_number {
+          font-weight: bold !important;
+
+          color: $green;
+        }
+      }
+    }
+    li {
+      ul {
+        margin-left: 10px;
+      }
+      a {
+        line-height: 1.5;
+
+        position: relative;
+
+        display: block;
+
+        margin-bottom: 20px;
+        padding-left: 15px;
+
+        color: $black;
+        .toc_number {
+          font-weight: 500;
+
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          display: inline-block;
+
+          margin-right: 4px;
+
+          color: $green;
+        }
+        &:hover {
+          color: $green;
+        }
+      }
+      li {
+        a {
+          padding-left: 25px;
+        }
+        li {
+          a {
+            padding-left: 35px;
+          }
+          li {
+            a {
+              padding-left: 45px;
+            }
+          }
+        }
+      }
+      &:before {
+        display: none;
+      }
+    }
   }
 }
 .article-container {
@@ -483,6 +572,10 @@ article {
       }
     }
   }
+}
+.comment-respond,
+.entry-pings {
+  padding: 30px 0 0;
 }
 .pagination {
   text-align: center;
@@ -612,8 +705,220 @@ aside {
       }
     }
   }
-}
+  .widget--usefull {
+    li {
+      display: block;
 
+      margin-bottom: 10px;
+      padding: 25px 30px;
+
+      border-radius: 3px;
+      background-color: #f3f5f8;
+      &:before {
+        position: absolute;
+        z-index: 1;
+        top: 24px;
+        left: -15px;
+
+        width: 27px;
+        height: 27px;
+
+        transition: $base-transition;
+
+        border: 6px solid #ffffff;
+        border-radius: 50%;
+        background-color: #bedb39;
+
+        @extend .dblock ;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      h5 {
+        font-size: 16px;
+
+        margin-bottom: 22px;
+        a {
+          font-weight: 500;
+
+          color: $green;
+        }
+      }
+      p {
+        line-height: 1.8;
+
+        margin: 0;
+      }
+      .view-article {
+        font-size: 13px;
+
+        display: block;
+
+        margin-bottom: 0;
+        padding-top: 22px;
+
+        text-decoration: underline;
+
+        color: $green;
+      }
+      &:hover {
+        &:before {
+          background-color: $green;
+        }
+      }
+    }
+  }
+}
+.modal-bg {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: none;
+  // display: flex;
+  flex-direction: row;
+
+  background-color: rgba(71, 125, 202, .6);
+
+  align-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  &.modal-bg--opened {
+    display: flex;
+  }
+  .modal-container {
+    width: 30%;
+    min-width: 320px;
+    padding: 0;
+
+    border: 15px solid #ffffff;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: $base-box-shadow;
+    form {
+      label,
+      p,
+      input,
+      textarea {
+        font-weight: normal;
+        line-height: 1.8;
+
+        margin-bottom: 10px;
+      }
+      p {
+        margin: 0;
+      }
+      .productname {
+        textarea {
+          height: 80px;
+        }
+      }
+      .your-message {
+        textarea {
+          height: 120px;
+        }
+      }
+    }
+  }
+  &.modal-product,
+  &.modal-product-cat {
+    .modal-container {
+      h6 {
+        font-size: 20px;
+        font-weight: bold;
+
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+
+        text-align: center;
+
+        border-bottom: 3px dotted $black;
+      }
+      h5 {
+        font-size: 18px;
+        font-weight: bold;
+
+        margin-bottom: 0;
+        padding-top: 8px;
+        padding-bottom: 8px;
+
+        text-align: center;
+
+        border-top: 3px dotted $black;
+        span {
+          display: block;
+        }
+      }
+      p {
+        margin: 0;
+      }
+      label {
+        margin-bottom: 0;
+      }
+      span.your-choise {
+        display: none;
+      }
+      #your-choise--span {
+        font-weight: bold;
+
+        display: block;
+      }
+      label {
+        margin-bottom: 0;
+      }
+      br {
+        display: none;
+      }
+      input[name=choise-price] {
+        font-weight: bold;
+
+        margin-bottom: 0;
+        padding: 0;
+
+        border: 0;
+        outline: none;
+        box-shadow: none;
+      }
+      input[name='your-name'],
+      input[name='your-phone'] {
+        margin-bottom: 4px;
+        padding: 5px;
+
+        color: #000000;
+        background-color: rgba(204, 204, 204, .24);
+      }
+      input[type=submit] {
+        font-weight: bold;
+
+        width: 100%;
+        margin-bottom: 0;
+        padding: 4px 0;
+
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .modal-close {
+    font-size: 60px;
+
+    position: absolute;
+    top: 50px;
+    right: 50px;
+
+    cursor: pointer;
+    transition: $base-transition;
+
+    color: #ffffff;
+    &:hover {
+      color: lighten($green, 25%);
+    }
+  }
+}
 
 footer {
   height: $footer;
