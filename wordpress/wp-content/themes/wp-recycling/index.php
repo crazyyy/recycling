@@ -1,10 +1,10 @@
 <?php get_header(); ?>
-  <article>
+  <div class="article-container col-lg-8 col-md-8">
 
-    <h1 class="ctitle"><?php _e( 'Latest Posts', 'wpeasy' ); ?></h1>
+    <h1 class="search-title inner-title"><?php _e( 'Latest Posts', 'wpeasy' ); ?></h1>
     <?php get_template_part('loop'); ?>
     <?php get_template_part('pagination'); ?>
 
-  </article>
+  </div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
