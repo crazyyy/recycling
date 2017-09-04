@@ -207,7 +207,7 @@ header {
 
       border-right: 1px solid #358c71;
       &:last-child {
-        border-right: 0;
+        border-right: 1px solid transparent;
       }
       a {
         font-size: 14px;
@@ -290,6 +290,9 @@ header {
             }
           }
         }
+      }
+      &.previous-menu-item {
+                border-right: 1px solid transparent;
       }
     }
   }
@@ -642,7 +645,6 @@ div#toc_container {
 }
 .article-container--tax {
   article {
-    padding-left: 5px;
     p {
       font-size: 13px;
       line-height: 22px;
@@ -702,6 +704,40 @@ div#toc_container {
   }
   .btn {
     margin-bottom: 22px;
+  }
+}
+.city-listing {
+  margin: 0 0 22px;
+  tr {
+    td {
+      border: 0;
+      h5 {
+        font-size: 120%;
+        font-weight: bold;
+      }
+      &:first-chid {
+        width: 80%;
+      }
+      &:last-child {
+        font-weight: bold;
+
+        width: 20%;
+
+        text-align: right;
+      }
+    }
+    &.prices {
+      td {
+        &:first-child {
+          padding-left: 20px;
+        }
+      }
+      &:hover {
+        td {
+          background-color: lighten($green, 30%);
+        }
+      }
+    }
   }
 }
 .comment-respond,

@@ -38,7 +38,7 @@ function wpeStyles()  {
   wp_dequeue_style('fancybox');
   wp_dequeue_style('wp_dequeue_style');
 
-  wp_register_style('wpeasy-style', get_template_directory_uri() . '/css/main.css', array(), '1.0', 'all');
+  wp_register_style('wpeasy-style', get_template_directory_uri() . '/css/main.css', array(), '1.2', 'all');
   wp_enqueue_style('wpeasy-style'); // Enqueue it!
 }
 

@@ -22,6 +22,12 @@ if (typeof jQuery === 'undefined') {
 }
 // Place any jQuery/helper plugins in here.
 $(document).ready(function() {
+
+  $('nav .current-menu-item').each(function(index, el) {
+    $(this).prev().addClass('previous-menu-item')
+    console.log('s')
+  });
+
   $('.modal-close').on('click', function(e) {
     CloseModal()
   })

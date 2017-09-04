@@ -1,20 +1,38 @@
 <?php get_header(); ?>
 
-  <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
+  <div class="article-container article-container--tax col-lg-8 col-md-8">
+    <?php $type = get_queried_object(); $term_id = $type->term_id; ?>
 
-      <h1 class="single-title inner-title"><?php the_title(); ?></h1>
+    <h1 class="page-title inner-title"><span>Пункты приема</span> <?php echo $type->name; ?></h1>
 
-      <?php the_content(); ?>
+    <?php the_yandex_map('places', $city) ?>
 
-      <?php edit_post_link(); ?>
+    <ul class="cities-list">
+      <?php
+          $args = array(
+            'post_type' => 'point',
+              'tax_query' => array(
+                array(
+                  'taxonomy' => 'type',
+                  'field' => 'slug',
+                  'terms' => array( $type->slug )
+                )
+              )
+          );
+          query_posts( $args );
+          while (have_posts()) : the_post();?>
+            <li>
+              <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            </li>
+        <?php endwhile; wp_reset_query(); ?>
 
-      <?php comments_template(); ?>
+    </ul><!-- /.cities-list -->
 
-      <?php subh_set_post_view( get_the_ID() ); ?>
-
+    <article>
+      <?php the_field('description', $city); ?>
     </article>
-  <?php endwhile; endif; ?>
+
+  </div>
 
   <?php get_sidebar(); ?>
 
