@@ -44,6 +44,15 @@ $(document).ready(function() {
     $('.modal-bg').addClass('modal-bg--opened').addClass('modal-recall');
   })
 
+  $('.btn-mobinavi').live('click', function(e) {
+    OpenMobileNav();
+  })
+
+  $('.btn-mobinavi--close-a').live('click', function(e){
+    $('.btn-mobinavi--close-a').removeClass('btn-mobinavi--close-a');
+    $('.nav__header--mobiled').removeClass('nav__header--mobiled');
+  })
+
 });
 
 function CloseModal() {
@@ -53,4 +62,12 @@ function CloseModal() {
 
 function OpenModal(html) {
   $('body').addClass('modal-opened');
+}
+
+function OpenMobileNav() {
+  var width = $(window).width();
+  if (width <= 519) {
+    $('.nav__header').addClass('nav__header--mobiled');
+    $('.btn-mobinavi--close').addClass('btn-mobinavi--close-a');
+  }
 }

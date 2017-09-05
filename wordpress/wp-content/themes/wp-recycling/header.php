@@ -28,7 +28,8 @@
     <div class="container">
       <div class="row">
 
-        <div class="header--logo col-lg-9 col-md-9">
+        <div class="header--logo col-lg-9 col-md-8 col-sm-12">
+
           <?php if ( !is_front_page() && !is_home() ){ ?>
             <a href="<?php echo home_url(); ?>">
           <?php } ?>
@@ -38,11 +39,13 @@
           <?php } ?>
         </div><!-- /logo -->
 
-        <div class="header-add col-lg-3 col-md-3">
+        <div class="header-add col-lg-3 col-md-4 col-sm-12">
+          <button class="btn btn-mobinavi"><i class="fa fa-bars" aria-hidden="true"></i></button>
+          <button class="btn btn-mobinavi--close"><i class="fa fa-times" aria-hidden="true"></i></button>
           <button class="btn btn-orange header-btn__add"><i class="ico ico-circle-plus">+</i>Добавить организацию</button>
         </div><!-- /.header-add col-lg-3 col-md-3 -->
 
-        <nav class="nav__header col-lg-12 col-md-12" role="navigation">
+        <nav class="nav__header col-lg-12 col-md-12 col-sm-12" role="navigation">
           <?php wpeHeadNav(); ?>
         </nav><!-- /nav -->
 

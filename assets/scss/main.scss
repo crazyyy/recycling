@@ -100,6 +100,26 @@ button,
       @include linear-gradient(#fd8f1c, #feb423);
     }
   }
+  &.btn-mobinavi,
+  &.btn-mobinavi--close {
+    font-size: 36px;
+
+    display: none;
+
+    width: 50px;
+    height: 50px;
+    padding: 0;
+    &:hover {
+      color: $orange;
+    }
+  }
+  &.btn-mobinavi--close-a {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+
+    display: block;
+  }
 }
 i.ico {
   display: inline-block;
@@ -317,6 +337,43 @@ header {
       }
       &.previous-menu-item {
         border-right: 1px solid transparent;
+      }
+    }
+  }
+  &.nav__header--mobiled {
+    position: fixed;
+    z-index: 50;
+    top: 70px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+
+    height: auto;
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      height: auto;
+
+      align-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      li {
+        display: block;
+
+        width: 100%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        a {
+          font-size: 16px;
+          font-weight: bold;
+          i.ico {
+            margin-right: 10px;
+          }
+        }
       }
     }
   }
@@ -1294,3 +1351,142 @@ footer {
 @import 'fonts/font_opensans';
 @import 'base64';
 @import 'import/print';
+
+@media (max-width: 1199px) {
+  header {
+    background-image: none;
+    button.btn-orange,
+    .btn.btn-orange {
+      width: 100%;
+    }
+  }
+  .nav__header,
+  .nav__footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+
+  .nav__header .headnav li a,
+  .nav__header .footernav li a,
+  .nav__footer .headnav li a,
+  .nav__footer .footernav li a {
+    padding-right: 3px;
+    padding-left: 3px;
+  }
+  .nav__header .headnav li a .ico,
+  .nav__header .footernav li a .ico,
+  .nav__footer .headnav li a .ico,
+  .nav__footer .footernav li a .ico {
+    margin-right: 3px;
+  }
+  .nav__header .headnav li,
+  .nav__header .footernav li,
+  .nav__footer .headnav li,
+  .nav__footer .footernav li {
+    border-right: 0;
+  }
+}
+@media (max-width: 991px) {
+  .nav__header,
+  .nav__footer {
+    ul {
+      display: flex;
+      flex-direction: row;
+
+      align-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      li {
+        width: 25%;
+        height: 56px;
+        a {
+          padding-right: 10px;
+          padding-left: 10px;
+          i {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+
+  .nav__header .headnav li.current-menu-item a:after,
+  .nav__header .footernav li.current-menu-item a:after,
+  .nav__footer .headnav li.current-menu-item a:after,
+  .nav__footer .footernav li.current-menu-item a:after {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  header {
+    height: auto;
+  }
+  header .header--logo {
+    margin-bottom: 20px;
+    padding-top: 15px;
+
+    text-align: center;
+  }
+  header .header-add {
+    padding-top: 0;
+    padding-bottom: 30px;
+  }
+  .nav__header .headnav li a,
+  .nav__header .footernav li a,
+  .nav__footer .headnav li a,
+  .nav__footer .footernav li a {
+    font-size: 12px;
+    font-weight: normal;
+  }
+  section {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  footer .nav__footer {
+    margin-bottom: 15px;
+  }
+  footer {
+    height: auto;
+    margin-top: 0;
+
+    background-image: none;
+  }
+  footer .copyright {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    text-align: center;
+  }
+  footer .container-footer {
+    background-image: none;
+  }
+}
+@media (max-width: 519px) {
+  .nav__header,
+  .nav__footer {
+    display: none;
+  }
+
+  button.btn-mobinavi,
+  .btn.btn-mobinavi {
+    display: inline-block;
+    float: left;
+  }
+  header button.btn-orange,
+  header .btn.btn-orange {
+    width: calc(100% - 70px);
+    height: 50px;
+  }
+  .nav__header ul li a i,
+  .nav__footer ul li a i {
+    display: inline-block;
+
+    margin-right: 10px;
+  }
+  header .header--logo {
+    padding-right: 80px;
+  }
+}
