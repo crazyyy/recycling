@@ -1463,6 +1463,15 @@ footer {
   footer .container-footer {
     background-image: none;
   }
+  .stats-block .stats-block--item {
+    width: 100%;
+  }
+  .stats-block .stats-block--item:nth-child(2n) .stats-block--count {
+    right: 20px;
+  }
+  .stats-block .stats-block--item:nth-child(2n) {
+    background-position: left center;
+  }
 }
 @media (max-width: 519px) {
   .nav__header,
@@ -1488,5 +1497,34 @@ footer {
   }
   header .header--logo {
     padding-right: 80px;
+  }
+  .nav__header .headnav li a, .nav__header .footernav li a, .nav__footer .headnav li a, .nav__footer .footernav li a {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: center;
+  }
+  .stats-block {
+    padding: 10px;
+  }
+  .stats-block .stats-block--item:nth-child(2n) .stats-block--count,
+  .stats-block .stats-block--item .stats-block--count {
+    right: 0;
+  }
+  .stats-block .stats-block--item {
+    padding-left: 50px;
+  }
+  .article-container.hentry .cities-list li, article.hentry .cities-list li {
+    width: 50%;
+  }
+  .article-container.hentry .cities-list li:nth-last-child(1), .article-container.hentry .cities-list li:nth-last-child(2), .article-container.hentry .cities-list li:nth-last-child(3), article.hentry .cities-list li:nth-last-child(1), article.hentry .cities-list li:nth-last-child(2), article.hentry .cities-list li:nth-last-child(3) {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 380px) {
+  .stats-block .stats-block--item .stats-block--href {
+    font-size: 14px;
   }
 }
