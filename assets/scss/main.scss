@@ -119,25 +119,46 @@ i.ico {
     border-radius: 50%;
   }
   &.ico-paper {
-    @include sprite($sprite-ico-paper);
+    width: 29px;
+    height: 28px;
+
+    background-image: url(../img/svg/ico-paper.svg);
   }
   &.ico-metal {
-    @include sprite($sprite-ico-metal);
+    width: 23px;
+    height: 21px;
+
+    background-image: url(../img/svg/ico-metal.svg);
   }
   &.ico-plast {
-    @include sprite($sprite-ico-plast);
+    width: 24px;
+    height: 25px;
+
+    background-image: url(../img/svg/ico-plast.svg);
   }
   &.ico-glass {
-    @include sprite($sprite-ico-glass);
+    width: 24px;
+    height: 25px;
+
+    background-image: url(../img/svg/ico-glass.svg);
   }
   &.ico-other {
-    @include sprite($sprite-ico-other);
+    width: 21px;
+    height: 27px;
+
+    background-image: url(../img/svg/ico-other.svg);
   }
   &.ico-util {
-    @include sprite($sprite-ico-util);
+    width: 34px;
+    height: 24px;
+
+    background-image: url(../img/svg/ico-util.svg);
   }
   &.ico-articles {
-    @include sprite($sprite-ico-articles);
+    width: 19px;
+    height: 24px;
+
+    background-image: url(../img/svg/ico-articles.svg);
   }
 }
 .wrapper {
@@ -271,25 +292,25 @@ header {
         i {
           &.ico {
             &.ico-paper {
-              @include sprite($sprite-ico-paper-a);
+              background-image: url(../img/svg/ico-paper-a.svg);
             }
             &.ico-metal {
-              @include sprite($sprite-ico-metal-a);
+              background-image: url(../img/svg/ico-metal-a.svg);
             }
             &.ico-plast {
-              @include sprite($sprite-ico-plast-a);
+              background-image: url(../img/svg/ico-plast-a.svg);
             }
             &.ico-glass {
-              @include sprite($sprite-ico-glass-a);
+              background-image: url(../img/svg/ico-glass-a.svg);
             }
             &.ico-other {
-              @include sprite($sprite-ico-other-a);
+              background-image: url(../img/svg/ico-other-a.svg);
             }
             &.ico-util {
-              @include sprite($sprite-ico-util-a);
+              background-image: url(../img/svg/ico-util-a.svg);
             }
             &.ico-articles {
-              @include sprite($sprite-ico-articles-a);
+              background-image: url(../img/svg/ico-articles-a.svg);
             }
           }
         }
@@ -570,6 +591,11 @@ article {
 
           @include sprite($sprite-ico-markers);
         }
+        &:nth-last-child(1),
+        &:nth-last-child(2),
+        &:nth-last-child(3) {
+          margin-bottom: 0;
+        }
       }
     }
   }
@@ -849,13 +875,14 @@ div#toc_container {
   tr {
     td {
       padding: 20px;
-        span {
-          font-weight: normal;
 
-          display: block;
-        }
       border: 0;
       border-bottom: 1px solid #bbdcd4;
+      span {
+        font-weight: normal;
+
+        display: block;
+      }
       h5 {
         font-size: 120%;
         font-weight: bold;
@@ -869,7 +896,6 @@ div#toc_container {
       }
       &:first-chid {
         width: 80%;
-
       }
       &:last-child {
         font-weight: bold;

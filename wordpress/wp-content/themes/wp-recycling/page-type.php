@@ -9,7 +9,7 @@
         <ul class="cities-list">
           <?php foreach( $cities as $city ): ?>
             <li>
-              <a href="<?php echo get_term_link( $city ); ?>"><?php echo $city->name; ?></a>
+              <a href="<?php echo get_permalink( $city ); ?>"><?php $city_name = get_field('city_name', $city->ID); echo $city_name->name; ?></a>
             </li>
           <?php endforeach; ?>
         </ul><!-- /.cities-list -->
