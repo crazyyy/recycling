@@ -25,7 +25,6 @@ $(document).ready(function() {
 
   $('nav .current-menu-item').each(function(index, el) {
     $(this).prev().addClass('previous-menu-item')
-    console.log('s')
   });
 
   $('.modal-close').on('click', function(e) {

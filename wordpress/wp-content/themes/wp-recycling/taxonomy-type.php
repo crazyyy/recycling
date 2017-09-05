@@ -5,9 +5,7 @@
 
     <h1 class="page-title inner-title"><span>Пункты приема</span> <?php echo $type->name; ?></h1>
 
-    <?php the_yandex_map('places', $city) ?>
-
-    <ul class="cities-list">
+    <ul class="pagetype--cities-list">
       <?php
           $args = array(
             'post_type' => 'point',
@@ -25,11 +23,12 @@
               <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </li>
         <?php endwhile; wp_reset_query(); ?>
-
     </ul><!-- /.cities-list -->
 
+    <?php the_yandex_map('places', $type) ?>
+
     <article>
-      <?php the_field('description', $city); ?>
+      <?php the_field('description', $type); ?>
     </article>
 
   </div>

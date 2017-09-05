@@ -9,9 +9,9 @@
 
       <?php edit_post_link(); ?>
 
-      <?php comments_template(); ?>
-
       <?php subh_set_post_view( get_the_ID() ); ?>
+
+      <?php get_template_part('inc-stats'); ?>
 
     </article>
   <?php endwhile; endif; ?>

@@ -2,7 +2,7 @@
 
   <div class="article-container article-container--tax col-lg-8 col-md-8">
     <?php $city = get_queried_object(); $term_id = $city->term_id; ?>
-    <h1 class="page-title inner-title"><span>Пункты приема</span> в <?php the_field('title', $city); ?></h1>
+    <h1 class="page-title inner-title"><span>Пункты приема</span> в <?php if (get_field('title', $city))  { the_field('title', $city); } else { echo $city->name; } ?></h1>
 
     <?php the_yandex_map('places', $city) ?>
 
