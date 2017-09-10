@@ -536,6 +536,16 @@ article {
         left: 0;
       }
     }
+    .single-title--subs {
+      font-size: 16px;
+      font-weight: bold;
+
+      margin-bottom: 22px;
+
+      text-transform: uppercase;
+
+      color: $green;
+    }
     p {
       font-size: 13px;
       line-height: 22px;
@@ -607,9 +617,7 @@ article {
         }
       }
     }
-    .sinle--short-descr,
-    .sinle--phone,
-    .sinle--adress {
+    .sinle--short-descr {
       font-size: 120%;
       font-weight: 500;
 
@@ -621,27 +629,41 @@ article {
     .prices-list {
       margin-bottom: 22px;
       tr {
+        &:nth-child(odd) {
+          td {
+            background-color: #f8fbfb;
+          }
+        }
         td {
+          font-weight: normal !important;
+          padding: 15px;
           &:first-child {
             width: 80%;
+            position: relative;
+            padding-left: 50px !important;
+            span {
+              font-size: 20px;
+              color: #dae9e5;
+              position: absolute;
+              top: 50%;
+              left: 15px;
+              display: block;
+              width: 15px;
+              text-align: center;
+              margin-top: -11px;
+            }
             padding: 5px;
           }
           &:last-child {
-            font-weight: bold;
-
             width: 20%;
 
-            text-align: center;
+            text-align: right;
+            vertical-align: middle;
+
+            color: $green;
           }
         }
-        &:hover {
-          background-color: lighten($green, 40%);
-          td {
-            &:last-child {
-              color: $green;
-            }
-          }
-        }
+
       }
     }
     .cities-list {
@@ -678,6 +700,11 @@ article {
         }
       }
     }
+    .yandex-map {
+      margin-bottom: 22px;
+
+      border-radius: 3px;
+    }
   }
   img {
     border-radius: 3px;
@@ -688,6 +715,34 @@ article {
     &.alignright {
       margin-bottom: 20px;
       margin-left: 30px;
+    }
+  }
+}
+.types-contacts {
+  font-size: 14px;
+
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 22px;
+  padding: 20px 20px 10px;
+
+  border-radius: 3px;
+  background-color: #f3f5f8;
+
+  align-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  p {
+    display: inline-block;
+
+    width: 50%;
+    margin-bottom: 10px !important;
+    span {
+      font-weight: bold;
+
+      color: $green;
     }
   }
 }
@@ -959,6 +1014,7 @@ div#toc_container {
       vertical-align: middle;
 
       border: 0;
+      border-top: 1px solid #bbdcd4;
       border-bottom: 1px solid #bbdcd4;
       span {
         font-weight: normal;

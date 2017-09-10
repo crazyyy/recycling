@@ -33,7 +33,7 @@
                 $term = get_sub_field('type');
                 if ( $gobal_type_slug == $term->slug) {
                   $price = intval(get_sub_field('price'));
-                  echo number_format($price,0,",",".");  ?> руб.
+                  echo number_format($price,0,","," ");  ?> руб.
                 <?php } endwhile; endif; ?>
               </td>
             </tr>
