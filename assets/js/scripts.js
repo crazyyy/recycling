@@ -48,10 +48,24 @@ $(document).ready(function() {
     OpenMobileNav();
   })
 
-  $('.btn-mobinavi--close-a').live('click', function(e){
+  $('.btn-mobinavi--close-a').live('click', function(e) {
     $('.btn-mobinavi--close-a').removeClass('btn-mobinavi--close-a');
     $('.nav__header--mobiled').removeClass('nav__header--mobiled');
   })
+
+  var widgetTitle = $('.widget h6')
+  FirstWordSpan(widgetTitle);
+
+  var innerTitle = $('.inner-title')
+  FirstWordSpan(innerTitle);
+
+  $('nav li').on('mouseover', function(e) {
+    $(this).prev().addClass('pre-nav-hovered')
+  })
+  $('nav li').on('mouseout', function(e) {
+    $(this).prev().removeClass('pre-nav-hovered')
+  })
+
 
 });
 
@@ -70,4 +84,11 @@ function OpenMobileNav() {
     $('.nav__header').addClass('nav__header--mobiled');
     $('.btn-mobinavi--close').addClass('btn-mobinavi--close-a');
   }
+}
+function FirstWordSpan(element) {
+  var html = $(element).html();
+  // doing the transformation (adding the span) with a regular expression
+  html = html.replace(/^([^\s]*)(.*)/, "<span class=\"first-word\">$1</span>$2");
+  // update your text
+  $(element).html(html);
 }

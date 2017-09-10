@@ -18,9 +18,15 @@
             <tr>
               <td>
                 <h5><a href="<?php echo get_permalink( $p->ID ); ?>"><?php echo get_the_title( $p->ID ); ?></a></h5>
-                <span><?php the_field('address', $p->ID ); ?></span>
-                <span><?php the_field('description', $p->ID); ?></span>
-                <span><?php the_field('phone', $p->ID); ?></span>
+                <?php if(get_field('address', $p->ID )){ ?>
+                  <span><?php the_field('address', $p->ID ); ?></span>
+                <?php } ?>
+                <?php if(get_field('description', $p->ID )){ ?>
+                  <span><?php the_field('description', $p->ID ); ?></span>
+                <?php } ?>
+                <?php if(get_field('phone', $p->ID )){ ?>
+                  <span><?php the_field('phone', $p->ID ); ?></span>
+                <?php } ?>
               </td>
               <td>
                 <?php if( have_rows('typesandprices', $p->ID) ): while ( have_rows('typesandprices', $p->ID) ) : the_row();

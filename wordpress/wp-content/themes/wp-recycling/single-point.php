@@ -28,7 +28,7 @@
                 <?php echo $term->name; ?>
               </td>
               <td>
-                <?php $price = intval(get_sub_field('price')); echo number_format($price,0,",",".");  ?> руб.
+                <?php $price = intval(get_sub_field('price')); echo number_format($price,0,","," ");  ?> руб.
               </td>
             </tr>
           <?php endwhile; ?>

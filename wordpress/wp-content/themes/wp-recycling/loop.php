@@ -11,7 +11,7 @@
       </a><!-- /post thumbnail -->
 
       <div class="looper--descr col-lg-7 col-md-7">
-        <h2 class="inner-title">
+        <h2 class="looper-title">
           <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
         </h2><!-- /post title -->
         <?php wpeExcerpt('wpeExcerpt40'); ?>

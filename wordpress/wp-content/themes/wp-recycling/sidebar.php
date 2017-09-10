@@ -10,7 +10,7 @@
   <?php endif; ?>
 
   <div class="widget widget--usefull">
-    <h6><span>Полезные</span> статьи</h6>
+    <h6>Полезные статьи</h6>
     <ul>
       <?php
         $args = array(
