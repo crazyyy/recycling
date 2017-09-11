@@ -42,7 +42,7 @@
         </table>
       <?php endif; ?>
 
-      <button class="btn btn-margin btn-orange header-btn__add"><i class="ico ico-circle-plus">+</i>Добавить организацию</button>
+      <button class="btn btn-margin btn-orange header-btn__add content-btn__add"><i class="ico ico-circle-plus">+</i>Добавить организацию</button>
 
       <article>
         <?php the_content(); ?>

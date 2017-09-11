@@ -53,7 +53,7 @@ $(document).ready(function() {
     $('.nav__header--mobiled').removeClass('nav__header--mobiled');
   })
 
-  var widgetTitle = $('.widget h6')
+  var widgetTitle = $('.widget .widget--title')
   FirstWordSpan(widgetTitle);
 
   var innerTitle = $('.inner-title')

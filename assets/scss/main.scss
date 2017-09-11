@@ -120,6 +120,15 @@ button,
 
     display: block;
   }
+  &.content-btn__add {
+    font-size: 14px;
+
+    width: 240px;
+    height: 36px;
+    padding: 0;
+
+    @include linear-gradient(#feb423, #fd901c);
+  }
 }
 i.ico {
   display: inline-block;
@@ -662,6 +671,9 @@ article {
             }
           }
           &:last-child {
+            font-weight: 900 !important;
+            font-weight: bold !important;
+
             width: 20%;
 
             text-align: right;
@@ -746,7 +758,7 @@ article {
     width: 50%;
     margin-bottom: 10px !important;
     span {
-      font-weight: bold;
+      font-weight: 900;
 
       color: $green;
     }
@@ -1111,10 +1123,12 @@ aside {
   }
   .widget {
     margin-bottom: 20px;
-    h6 {
+    .widget--title {
       font-size: 30px;
 
       position: relative;
+
+      display: block;
 
       margin-bottom: 25px;
       padding-bottom: 20px;
@@ -1423,7 +1437,7 @@ footer {
   background-repeat: no-repeat;
   background-position: center top;
   .nav__footer {
-    margin-bottom: 58px;
+    margin-bottom: 40px;
   }
   .container-footer {
     height: 100%;

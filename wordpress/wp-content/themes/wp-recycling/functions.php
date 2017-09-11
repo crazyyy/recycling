@@ -58,7 +58,7 @@ function wpeHeaderScripts() {
     wp_deregister_script( 'jquery-form' );
 
     //  Load footer scripts (footer.php)
-    wp_register_script('wpeScripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.3.0', true);
+    wp_register_script('wpeScripts', get_template_directory_uri() . '/js/scripts.js', array(), '1.3.5', true);
     wp_enqueue_script('wpeScripts');
 
   }
@@ -187,8 +187,8 @@ if (function_exists('register_sidebar')) {
     'id' => 'widgetarea1',
     'before_widget' => '<div id="%1$s" class="widget %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<h6>',
-    'after_title' => '</h6>'
+    'before_title' => '<span class="widget--title">',
+    'after_title' => '</span>'
   ));
   //  Define Sidebar Widget Area 2. If your want to display more widget - uncoment this
   /*
@@ -293,11 +293,6 @@ function html5wp_pagination() {
   ));
 }
 
-// Remove Admin bar
-add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
-function remove_admin_bar() {
-  return false;
-}
 
 // Remove 'text/css' from our enqueued stylesheet
 add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet

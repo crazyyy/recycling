@@ -12,7 +12,7 @@
         <?php wpeFootNav(); ?>
       </nav><!-- /nav -->
 
-      <p class="copyright col-lg-3 col-lg-push-9 col-md-3 col-md-push-9 col-sm-12">
+      <p class="copyright col-lg-4 col-lg-push-8 col-md-4 col-md-push-8 col-sm-12">
          &copy; <?php echo date("Y"); ?> Все права защищены <?php bloginfo('name'); ?>
       </p><!-- /copyright -->
 

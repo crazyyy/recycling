@@ -6,7 +6,7 @@
 
     <?php the_yandex_map('places', $city) ?>
 
-    <button class="btn btn-orange header-btn__add"><i class="ico ico-circle-plus">+</i>Добавить организацию</button>
+    <button class="btn btn-orange header-btn__add content-btn__add"><i class="ico ico-circle-plus">+</i>Добавить организацию</button>
 
     <table class="city-listing">
       <?php
