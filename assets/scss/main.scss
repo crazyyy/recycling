@@ -1,34 +1,44 @@
-@import 'import/reset';
-@import 'import/variables';
-@import 'import/buttons';
-@import 'import/forms';
-@import 'import/lists';
-@import 'import/tables';
-@import 'import/mixin';
-@import 'import/wordpress';
+@import "import/reset";
+@import "import/variables";
+@import "import/buttons";
+@import "import/forms";
+@import "import/lists";
+@import "import/tables";
+@import "import/mixin";
+@import "import/wordpress";
 
-@import 'grid/bootstrap';
-@import 'grid/bootstrap-theme';
+@import "grid/bootstrap";
+@import "grid/bootstrap-theme";
 
-@import 'super_sprite';
+@import "super_sprite";
 
 body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   font-weight: $fnorm;
   line-height: $base-line-height;
-
   min-width: 320px;
-
   transition: $base-transition;
-
   color: $base-font-color;
   background-color: $base-background-color;
   background-image: url(../img/bg/body.jpg);
   background-repeat: no-repeat;
   background-position: center top;
-
   -webkit-font-smoothing: antialiased;
+  &.single-point {
+    .menu-item-124 {
+      background: transparent !important;
+      a {
+        color: #fff !important;
+        &:after {
+          display: none !important;
+        }
+        i {
+          background-image: url(../img/svg/ico-articles.svg) !important;
+        }
+      }
+    }
+  }
 }
 h1,
 h2,
@@ -39,7 +49,6 @@ h6 {
   font-family: $heading-font-family;
   font-size: $base-font-size;
   line-height: $heading-line-height;
-
   margin: 0 0 $small-spacing;
 }
 p,
@@ -49,7 +58,6 @@ pre {
 a {
   transition: $base-transition;
   text-decoration: none;
-
   color: $action-color;
   &:active,
   &:focus,
@@ -64,7 +72,6 @@ a {
 }
 hr {
   margin: $base-spacing 0;
-
   border-top: none;
   border-right: none;
   border-bottom: $base-border;
@@ -79,16 +86,13 @@ button,
 .btn {
   font-size: 14px;
   font-weight: 600;
-
   width: 260px;
   height: 45px;
-
   transition: $base-transition;
-
   border-radius: 3px;
   box-shadow: 0 1px 0 0 rgba(87, 44, 8, .65);
   &.btn-orange {
-    color: #ffffff;
+    color: #fff;
 
     @include linear-gradient(#feb423, #fd8f1c);
   }
@@ -103,9 +107,7 @@ button,
   &.btn-mobinavi,
   &.btn-mobinavi--close {
     font-size: 36px;
-
     display: none;
-
     width: 50px;
     height: 50px;
     padding: 0;
@@ -117,12 +119,10 @@ button,
     position: fixed;
     top: 10px;
     right: 10px;
-
     display: block;
   }
   &.content-btn__add {
     font-size: 14px;
-
     width: 240px;
     height: 36px;
     padding: 0;
@@ -132,67 +132,55 @@ button,
 }
 i.ico {
   display: inline-block;
-
   background-repeat: no-repeat;
   background-position: center;
   &.ico-circle-plus {
     line-height: 1.4;
-
     width: 20px;
     height: 20px;
     margin-right: 8px;
-
     text-align: center;
-
-    border: 1px solid #ffffff;
+    border: 1px solid #fff;
     border-radius: 50%;
   }
   &.ico-paper {
     width: 29px;
     height: 28px;
-
     background-image: url(../img/svg/ico-paper.svg);
   }
   &.ico-metal {
     width: 23px;
     height: 21px;
-
     background-image: url(../img/svg/ico-metal.svg);
   }
   &.ico-plast {
     width: 24px;
     height: 25px;
-
     background-image: url(../img/svg/ico-plast.svg);
   }
   &.ico-glass {
     width: 24px;
     height: 25px;
-
     background-image: url(../img/svg/ico-glass.svg);
   }
   &.ico-other {
     width: 21px;
     height: 27px;
-
     background-image: url(../img/svg/ico-other.svg);
   }
   &.ico-util {
     width: 34px;
     height: 24px;
-
     background-image: url(../img/svg/ico-util.svg);
   }
   &.ico-articles {
     width: 19px;
     height: 24px;
-
     background-image: url(../img/svg/ico-articles.svg);
   }
 }
 .wrapper {
   position: relative;
-
   width: 100%;
   height: auto !important;
   height: 100%;
@@ -203,22 +191,18 @@ i.ico {
 }
 .container {
   position: relative;
-
   max-width: $width;
 }
 
 header {
   height: 235px;
-
   background-image: url(../img/bg/header.png);
   background-repeat: no-repeat;
   background-position: bottom center;
   .header--logo {
     display: block;
-
     margin-bottom: 40px;
     padding-top: 48px;
-
     text-align: left;
     img {
       max-width: 100%;
@@ -226,7 +210,6 @@ header {
   }
   .header-add {
     padding-top: 50px;
-
     text-align: right;
   }
 }
@@ -240,14 +223,11 @@ header {
     display: block;
     display: flex;
     flex-direction: row;
-
     height: 100%;
     padding-right: 10px;
     padding-left: 10px;
-
     border-radius: 0 0 3px 3px;
     box-shadow: inset 0 6px 3px 0 rgba(0,0,0,.2);
-
     align-content: stretch;
     align-items: flex-start;
     flex-wrap: nowrap;
@@ -255,9 +235,7 @@ header {
     justify-content: space-between;
     li {
       display: inline-block;
-
       height: 100%;
-
       border-right: 1px solid #358c71;
       &:last-child {
         border-right: 1px solid transparent;
@@ -265,19 +243,13 @@ header {
       a {
         font-size: 14px;
         font-weight: 600;
-
         position: relative;
-
         display: flex;
         flex-direction: row;
-
         height: 100%;
         padding: 0 20px;
-
         text-align: center;
-
-        color: #ffffff;
-
+        color: #fff;
         align-content: stretch;
         align-items: center;
         flex-wrap: nowrap;
@@ -290,12 +262,9 @@ header {
           right: 0;
           bottom: -11px;
           left: 0;
-
           display: none;
-
           height: 11px;
-
-          content: '';
+          content: "";
 
           @extend .nav__header-a-bottom;
         }
@@ -361,23 +330,18 @@ header {
     right: 0;
     bottom: 0;
     left: 0;
-
     display: block;
-
     height: auto;
     ul {
       display: flex;
       flex-direction: column;
-
       height: auto;
-
       align-content: flex-start;
       align-items: flex-start;
       flex-wrap: wrap;
       justify-content: space-between;
       li {
         display: block;
-
         width: 100%;
         padding-top: 15px;
         padding-bottom: 15px;
@@ -398,50 +362,38 @@ section {
 .stats-block {
   display: flex;
   flex-direction: row;
-
   margin-bottom: 22px;
   padding: 10px 30px 10px 25px;
-
   border-radius: 3px;
   background-color: #f9fafc;
-
   align-content: stretch;
   align-items: flex-start;
   flex-wrap: wrap;
   justify-content: flex-start;
   .stats-block--item {
     position: relative;
-
     width: 50%;
     padding: 20px 0 20px 60px;
-
     border-bottom: 1px solid #e3efee;
     background-repeat: no-repeat;
     background-position: left center;
     .stats-block--href {
       font-size: 18px;
       font-weight: 500;
-
       text-transform: uppercase;
-
       color: $black;
     }
     .stats-block--count {
       font-size: 13px;
       line-height: 2.4;
-
       position: absolute;
       top: 50%;
       right: 20px;
-
       display: block;
-
       width: 55px;
       height: 30px;
       margin-top: -15px;
-
       text-align: center;
-
       color: $green;
       border-radius: 3px;
       background-color: #e1eeed;
@@ -470,9 +422,7 @@ article {
   .single-title,
   .search-title {
     font-size: 30px;
-
     position: relative;
-
     margin-bottom: 25px;
     padding: 0 5px 20px;
     span {
@@ -482,10 +432,8 @@ article {
       position: absolute;
       bottom: 0;
       left: 5px;
-
       width: 45px;
       height: 3px;
-
       background-color: #abcfc9;
 
       @extend .dblock;
@@ -493,7 +441,6 @@ article {
   }
   .page-subtitle {
     font-size: 22px;
-
     margin: 0;
     padding: 0 0 0 5px;
     &:atfer {
@@ -509,9 +456,7 @@ article {
     h5,
     h6 {
       font-weight: bold;
-
       margin-bottom: 22px;
-
       color: #3b4851;
     }
     h1 {
@@ -536,7 +481,6 @@ article {
     .single-title,
     .search-title {
       font-size: 30px;
-
       padding-left: 0;
       span {
         color: $green;
@@ -548,23 +492,18 @@ article {
     .single-title--subs {
       font-size: 16px;
       font-weight: bold;
-
       margin-bottom: 22px;
-
       text-transform: uppercase;
-
       color: $green;
     }
     p {
       font-size: 13px;
       line-height: 22px;
-
       margin-bottom: 22px;
     }
     blockquote {
       margin-bottom: 22px;
       padding: 20px 30px 1px;
-
       color: #1f8a70;
       border-left: 1px solid #1f8a70;
       background-color: #eff7f5;
@@ -574,7 +513,6 @@ article {
       margin-bottom: 22px;
       li {
         font-weight: bold;
-
         margin-bottom: 20px;
         padding-left: 30px;
       }
@@ -586,16 +524,12 @@ article {
           position: relative;
           top: 50%;
           left: 0;
-
           display: inline-block;
-
           width: 10px;
           height: 10px;
           margin-top: -5px;
           margin-right: 10px;
-
-          content: '';
-
+          content: "";
           border-radius: 50%;
           background-color: $green;
         }
@@ -629,10 +563,8 @@ article {
     .sinle--short-descr {
       font-size: 120%;
       font-weight: 500;
-
       margin-bottom: 22px;
       padding-left: 30px;
-
       border-left: 2px solid $green;
     }
     .prices-list {
@@ -645,40 +577,30 @@ article {
         }
         td {
           font-weight: normal !important;
-
           padding: 15px;
           &:first-child {
             position: relative;
-
             width: 80%;
             padding: 5px;
             padding-left: 50px !important;
             span {
               font-size: 20px;
-
               position: absolute;
               top: 50%;
               left: 15px;
-
               display: block;
-
               width: 15px;
               margin-top: -11px;
-
               text-align: center;
-
               color: #dae9e5;
             }
           }
           &:last-child {
             font-weight: 900 !important;
             font-weight: bold !important;
-
             width: 20%;
-
             text-align: right;
             vertical-align: middle;
-
             color: $green;
           }
         }
@@ -687,26 +609,21 @@ article {
     .cities-list {
       display: flex;
       flex-direction: row;
-
       margin-bottom: 40px;
       padding: 20px 25px;
-
       background-color: #f3f5f8;
-
       align-content: stretch;
       align-items: flex-start;
       flex-wrap: wrap;
       justify-content: center;
       li {
         display: inline-block;
-
         width: 33.3%;
         a {
           text-decoration: underline;
         }
         &:before {
           margin-top: -8px;
-
           background-color: transparent !important;
 
           @include sprite($sprite-ico-markers);
@@ -720,7 +637,6 @@ article {
     }
     .yandex-map {
       margin-bottom: 22px;
-
       border-radius: 3px;
     }
   }
@@ -738,28 +654,22 @@ article {
 }
 .types-contacts {
   font-size: 14px;
-
   display: flex;
   flex-direction: row;
-
   margin-bottom: 22px;
   padding: 20px 20px 10px;
-
   border-radius: 3px;
   background-color: #f3f5f8;
-
   align-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
   justify-content: flex-start;
   p {
     display: inline-block;
-
     width: 50%;
     margin-bottom: 10px !important;
     span {
       font-weight: 900;
-
       color: $green;
     }
   }
@@ -767,19 +677,17 @@ article {
 div#toc_container {
   margin: 0 0 22px;
   padding: 30px;
-
   border: 0 !important;
   border-radius: 3px;
   background-color: #ebf2f0 !important;
   .toc_list {
     margin-bottom: 18px;
     margin-left: 30px;
-    > li {
-      > a {
+     >li {
+       >a {
         font-weight: bold;
         .toc_number {
           font-weight: bold !important;
-
           color: $green;
         }
       }
@@ -790,26 +698,18 @@ div#toc_container {
       }
       a {
         line-height: 1.5;
-
         position: relative;
-
         display: block;
-
         margin-bottom: 20px;
         padding-left: 15px;
-
         color: $black;
         .toc_number {
           font-weight: 500;
-
           position: absolute;
           top: 0;
           left: 0;
-
           display: inline-block;
-
           margin-right: 4px;
-
           color: $green;
         }
         &:hover {
@@ -840,21 +740,16 @@ div#toc_container {
 .pagetype--cities-list {
   display: flex;
   flex-direction: row;
-
   margin-bottom: 40px;
   padding: 20px 25px;
-
   background-color: #f3f5f8;
-
   align-content: stretch;
   align-items: flex-start;
   flex-wrap: wrap;
   justify-content: center;
   li {
     position: relative;
-
     display: inline-block;
-
     width: 50%;
     margin-bottom: 22px;
     padding-left: 20px;
@@ -865,11 +760,8 @@ div#toc_container {
       position: absolute;
       top: 50%;
       left: 0;
-
       display: block;
-
       margin-top: -8px;
-
       background-color: transparent !important;
 
       @include sprite($sprite-ico-markers);
@@ -879,7 +771,6 @@ div#toc_container {
 .article-container {
   .looper {
     position: relative;
-
     margin-bottom: 35px;
     padding-bottom: 35px;
 
@@ -889,13 +780,9 @@ div#toc_container {
       right: 0;
       bottom: 0;
       left: 5px;
-
       display: block !important;
-
       height: 1px;
-
-      content: '';
-
+      content: "";
       background-color: #ddeae7;
     }
     h2 {
@@ -903,19 +790,16 @@ div#toc_container {
       a {
         font-size: 18px;
         font-weight: bold;
-
         color: #1f8a70;
       }
     }
     p {
       font-size: 13px;
       line-height: 22px;
-
       margin-bottom: 20px;
     }
     .view-article {
       display: block;
-
       text-decoration: underline;
     }
     &:nth-last-child(2) {
@@ -931,13 +815,11 @@ div#toc_container {
     p {
       font-size: 13px;
       line-height: 22px;
-
       margin-bottom: 22px;
     }
     blockquote {
       margin-bottom: 22px;
       padding: 20px 30px;
-
       color: #1f8a70;
       border-left: 1px solid #1f8a70;
       background-color: #eff7f5;
@@ -947,7 +829,6 @@ div#toc_container {
       margin-bottom: 22px;
       li {
         font-weight: bold;
-
         margin-bottom: 20px;
         padding-left: 30px;
       }
@@ -959,11 +840,9 @@ div#toc_container {
           position: absolute;
           top: 50%;
           left: 0;
-
           width: 10px;
           height: 10px;
           margin-top: -5px;
-
           border-radius: 50%;
           background-color: $green;
 
@@ -1003,9 +882,7 @@ div#toc_container {
       }
       &:last-child {
         font-weight: bold;
-
         width: 20%;
-
         text-align: right;
       }
     }
@@ -1028,25 +905,19 @@ div#toc_container {
   tr {
     td {
       padding: 20px;
-
       vertical-align: middle;
-
       border: 0;
       border-top: 1px solid #bbdcd4;
       border-bottom: 1px solid #bbdcd4;
       span {
         font-weight: normal;
-
         display: block;
-
         margin-bottom: 10px;
       }
       h5 {
         font-size: 120%;
         font-weight: bold;
-
         margin-bottom: 10px;
-
         color: $black;
         a {
           color: $black;
@@ -1062,12 +933,9 @@ div#toc_container {
       }
       &:last-child {
         font-weight: bold;
-
         width: 20%;
         padding: 20px 0;
-
         text-align: right;
-
         color: $green;
       }
     }
@@ -1087,15 +955,11 @@ div#toc_container {
   a,
   span {
     display: inline-block;
-
     margin: 0 12px;
-
     text-decoration: underline;
-
     color: $black;
     &.current {
       text-decoration: none;
-
       color: $green;
     }
     &.next,
@@ -1104,12 +968,10 @@ div#toc_container {
     }
     &.next {
       float: right;
-
       margin-right: 0;
     }
     &.prev {
       float: left;
-
       margin-left: 0;
     }
     &:hover {
@@ -1125,11 +987,8 @@ aside {
     margin-bottom: 20px;
     .widget--title {
       font-size: 30px;
-
       position: relative;
-
       display: block;
-
       margin-bottom: 25px;
       padding-bottom: 20px;
       span {
@@ -1139,10 +998,8 @@ aside {
         position: absolute;
         bottom: 0;
         left: 0;
-
         width: 45px;
         height: 3px;
-
         background-color: #abcfc9;
 
         @extend .dblock;
@@ -1161,34 +1018,29 @@ aside {
   .widget_search {
     form {
       position: relative;
-
       width: 100%;
       height: 40px;
-
       border-radius: 3px;
 
       @include linear-gradient(#419a67, #1f8a70);
       input {
         font-size: 15px;
         font-weight: 500;
-
         position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-
         width: auto;
         margin: 0;
         padding: 13px 20px;
-
-        color: #ffffff;
+        color: #fff;
         border: 0;
         border-radius: 3px;
         background-color: transparent;
 
         @include placeholder {
-          color: #ffffff;
+          color: #fff;
         }
       }
       button {
@@ -1196,11 +1048,9 @@ aside {
         top: 1px;
         right: 0;
         bottom: 1px;
-
         width: 50px;
         height: auto;
         padding: 0;
-
         border-radius: 0 3px 3px 0;
         background-color: transparent;
         background-repeat: no-repeat;
@@ -1216,10 +1066,8 @@ aside {
   .widget--usefull {
     li {
       display: block;
-
       margin-bottom: 10px;
       padding: 25px 30px;
-
       border-radius: 3px;
       background-color: #f3f5f8;
       &:before {
@@ -1227,13 +1075,10 @@ aside {
         z-index: 1;
         top: 24px;
         left: -15px;
-
         width: 27px;
         height: 27px;
-
         transition: $base-transition;
-
-        border: 6px solid #ffffff;
+        border: 6px solid #fff;
         border-radius: 50%;
         background-color: #bedb39;
 
@@ -1244,29 +1089,22 @@ aside {
       }
       h5 {
         font-size: 16px;
-
         margin-bottom: 22px;
         a {
           font-weight: 500;
-
           color: $green;
         }
       }
       p {
         line-height: 1.8;
-
         margin: 0;
       }
       .view-article {
         font-size: 13px;
-
         display: block;
-
         margin-bottom: 0;
         padding-top: 22px;
-
         text-decoration: underline;
-
         color: $green;
       }
       &:hover {
@@ -1284,12 +1122,9 @@ aside {
   right: 0;
   bottom: 0;
   left: 0;
-
   display: none;
   flex-direction: row;
-
   background-color: rgba(71, 125, 202, .6);
-
   align-content: center;
   align-items: center;
   flex-wrap: nowrap;
@@ -1299,14 +1134,12 @@ aside {
   }
   .modal-container {
     position: relative;
-
     width: 30%;
     min-width: 320px;
     padding: 0;
-
-    border: 15px solid #ffffff;
+    border: 15px solid #fff;
     border-radius: 8px;
-    background-color: #ffffff;
+    background-color: #fff;
     box-shadow: $base-box-shadow;
     form {
       label,
@@ -1315,7 +1148,6 @@ aside {
       textarea {
         font-weight: normal;
         line-height: 1.8;
-
         margin-bottom: 10px;
       }
       p {
@@ -1339,24 +1171,18 @@ aside {
       h6 {
         font-size: 20px;
         font-weight: bold;
-
         margin-bottom: 10px;
         padding-bottom: 10px;
-
         text-align: center;
-
         border-bottom: 3px dotted $black;
       }
       h5 {
         font-size: 18px;
         font-weight: bold;
-
         margin-bottom: 0;
         padding-top: 8px;
         padding-bottom: 8px;
-
         text-align: center;
-
         border-top: 3px dotted $black;
         span {
           display: block;
@@ -1373,7 +1199,6 @@ aside {
       }
       #your-choise--span {
         font-weight: bold;
-
         display: block;
       }
       label {
@@ -1384,29 +1209,24 @@ aside {
       }
       input[name=choise-price] {
         font-weight: bold;
-
         margin-bottom: 0;
         padding: 0;
-
         border: 0;
         outline: none;
         box-shadow: none;
       }
-      input[name='your-name'],
-      input[name='your-phone'] {
+      input[name="your-name"],
+      input[name="your-phone"] {
         margin-bottom: 4px;
         padding: 5px;
-
-        color: #000000;
+        color: #000;
         background-color: rgba(204, 204, 204, .24);
       }
       input[type=submit] {
         font-weight: bold;
-
         width: 100%;
         margin-bottom: 0;
         padding: 4px 0;
-
         text-align: center;
         text-transform: uppercase;
       }
@@ -1414,14 +1234,11 @@ aside {
   }
   .modal-close {
     font-size: 40px;
-
     position: absolute;
     top: -20px;
     right: -10px;
-
     cursor: pointer;
     transition: $base-transition;
-
     color: $green;
     &:hover {
       color: lighten($green, 25%);
@@ -1432,7 +1249,6 @@ aside {
 footer {
   height: $footer;
   margin: $footer_margin auto 0;
-
   background-image: url(../img/bg/footer.jpg);
   background-repeat: no-repeat;
   background-position: center top;
@@ -1441,13 +1257,11 @@ footer {
   }
   .container-footer {
     height: 100%;
-
     background-image: url(../img/logo-footer.png);
     background-repeat: no-repeat;
     background-position: 20px 90px;
     .row-footer {
       height: 100%;
-
       background-image: url(../img/bg/header.png);
       background-repeat: no-repeat;
       background-position: center 10px;
@@ -1455,16 +1269,15 @@ footer {
   }
   .copyright {
     font-size: 14px;
-
     color: #babfc9;
   }
 }
 
 
-@import 'fonts/font_fontawesome';
-@import 'fonts/font_opensans';
-@import 'base64';
-@import 'import/print';
+@import "fonts/font_fontawesome";
+@import "fonts/font_opensans";
+@import "base64";
+@import "import/print";
 
 @media (max-width: 1199px) {
   header {
@@ -1507,7 +1320,6 @@ footer {
     ul {
       display: flex;
       flex-direction: row;
-
       align-content: flex-start;
       align-items: flex-start;
       flex-wrap: wrap;
@@ -1541,7 +1353,6 @@ footer {
   header .header--logo {
     margin-bottom: 20px;
     padding-top: 15px;
-
     text-align: center;
   }
   header .header-add {
@@ -1565,13 +1376,11 @@ footer {
   footer {
     height: auto;
     margin-top: 0;
-
     background-image: none;
   }
   footer .copyright {
     padding-top: 15px;
     padding-bottom: 15px;
-
     text-align: center;
   }
   footer .container-footer {
@@ -1606,7 +1415,6 @@ footer {
   .nav__header ul li a i,
   .nav__footer ul li a i {
     display: inline-block;
-
     margin-right: 10px;
   }
   header .header--logo {
@@ -1618,7 +1426,6 @@ footer {
   .nav__footer .footernav li a {
     display: flex;
     flex-direction: row;
-
     align-content: flex-start;
     align-items: center;
     flex-wrap: nowrap;
