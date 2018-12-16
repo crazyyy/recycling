@@ -1,1 +1,0 @@
-D:/Works/Verstka/recycling/wordpress/wp-content/plugins/query-monitor/wp-content/db.php
